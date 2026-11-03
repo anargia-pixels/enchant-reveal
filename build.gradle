@@ -1,0 +1,72 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"enchantreveal" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+// runGameTest (part of `build`) checks the preview against real enchanting;
+// runClientGameTest (manual) screenshots the tooltip in a real singleplayer world.
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "enchantreveal-test"
+		enableGameTests = true
+		enableClientGameTests = true
+		eula = true
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	// Only needed for the game test run; the shipped mod does not depend on it.
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+// Copies the built jar into the Prism Launcher instance. Override with -PprismModsDir=/path/to/mods
+def prismModsDir = providers.gradleProperty("prismModsDir")
+		.orElse("${System.getProperty('user.home')}/.local/share/PrismLauncher/instances/26.3/minecraft/mods")
+
+def archivesName = base.archivesName
+
+tasks.register("installToPrism", Copy) {
+	group = "distribution"
+	description = "Copies the mod jar into the Prism Launcher instance's mods folder."
+	from tasks.named("jar")
+	into prismModsDir
+	doFirst {
+		// Remove older builds of this mod so only one version is loaded.
+		def prefix = "${archivesName.get()}-"
+		new File(prismModsDir.get()).listFiles()?.findAll { it.name.startsWith(prefix) && it.name.endsWith(".jar") }*.delete()
+	}
+}
+
+tasks.named("build") { finalizedBy "installToPrism" }

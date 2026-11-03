@@ -1,0 +1,20 @@
+{
+	"schemaVersion": 1,
+	"id": "enchantreveal-test",
+	"version": "1.0.0",
+	"name": "Enchant Reveal game tests",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-gametest": [
+			"dev.doctorthe113.enchantreveal.test.EnchantPreviewTest"
+		],
+		"fabric-client-gametest": [
+			"dev.doctorthe113.enchantreveal.test.EnchantRevealClientTest"
+		]
+	},
+	"depends": {
+		"enchantreveal": "*",
+		"fabric-gametest-api-v1": "*",
+		"fabric-client-gametest-api-v1": "*"
+	}
+}

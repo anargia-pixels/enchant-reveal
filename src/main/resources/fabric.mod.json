@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"id": "enchantreveal",
+	"version": "${version}",
+	"name": "Enchant Reveal",
+	"description": "Shows every enchantment each enchanting table slot will give, instead of one clue and \"...?\". Singleplayer only.",
+	"authors": ["doctorthe113"],
+	"license": "MIT",
+	"contact": {
+		"sources": "https://github.com/anargia-pixels/enchant-reveal",
+		"issues": "https://github.com/anargia-pixels/enchant-reveal/issues"
+	},
+	"environment": "*",
+	"mixins": [
+		{ "config": "enchantreveal.client.mixins.json", "environment": "client" }
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25"
+	}
+}
