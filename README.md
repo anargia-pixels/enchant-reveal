@@ -1,5 +1,7 @@
 # Enchant Reveal
 
+<img src="src/main/resources/assets/enchantreveal/icon.png" width="96" alt="Enchant Reveal icon">
+
 Fabric mod for Minecraft 26.3. When you hover over an enchanting table slot, the tooltip lists
 **every** enchantment that slot will give, instead of one clue followed by `. . . ?`.
 

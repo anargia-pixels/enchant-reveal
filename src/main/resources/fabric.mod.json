@@ -6,6 +6,7 @@
 	"description": "Shows every enchantment each enchanting table slot will give, instead of one clue and \"...?\". Singleplayer only.",
 	"authors": ["doctorthe113"],
 	"license": "MIT",
+	"icon": "assets/enchantreveal/icon.png",
 	"contact": {
 		"sources": "https://github.com/anargia-pixels/enchant-reveal",
 		"issues": "https://github.com/anargia-pixels/enchant-reveal/issues"
