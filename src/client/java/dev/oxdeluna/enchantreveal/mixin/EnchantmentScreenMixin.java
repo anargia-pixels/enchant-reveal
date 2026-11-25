@@ -1,11 +1,11 @@
-package dev.doctorthe113.enchantreveal.mixin;
+package dev.oxdeluna.enchantreveal.mixin;
 
 import java.util.List;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.doctorthe113.enchantreveal.EnchantPreview;
+import dev.oxdeluna.enchantreveal.EnchantPreview;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 

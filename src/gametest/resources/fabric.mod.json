@@ -6,10 +6,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"fabric-gametest": [
-			"dev.doctorthe113.enchantreveal.test.EnchantPreviewTest"
+			"dev.oxdeluna.enchantreveal.test.EnchantPreviewTest"
 		],
 		"fabric-client-gametest": [
-			"dev.doctorthe113.enchantreveal.test.EnchantRevealClientTest"
+			"dev.oxdeluna.enchantreveal.test.EnchantRevealClientTest"
 		]
 	},
 	"depends": {

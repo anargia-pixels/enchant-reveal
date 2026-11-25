@@ -1,6 +1,6 @@
-package dev.doctorthe113.enchantreveal.test;
+package dev.oxdeluna.enchantreveal.test;
 
-import dev.doctorthe113.enchantreveal.EnchantPreview;
+import dev.oxdeluna.enchantreveal.EnchantPreview;
 import net.fabricmc.fabric.api.client.gametest.v1.FabricClientGameTest;
 import net.fabricmc.fabric.api.client.gametest.v1.context.ClientGameTestContext;
 import net.fabricmc.fabric.api.client.gametest.v1.context.TestSingleplayerContext;

@@ -1,4 +1,4 @@
-package dev.doctorthe113.enchantreveal;
+package dev.oxdeluna.enchantreveal;
 
 import java.util.List;
 import java.util.Optional;

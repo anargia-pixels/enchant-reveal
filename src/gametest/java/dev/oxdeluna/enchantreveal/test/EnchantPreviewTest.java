@@ -1,9 +1,9 @@
-package dev.doctorthe113.enchantreveal.test;
+package dev.oxdeluna.enchantreveal.test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import dev.doctorthe113.enchantreveal.EnchantPreview;
+import dev.oxdeluna.enchantreveal.EnchantPreview;
 import net.fabricmc.fabric.api.gametest.v1.GameTest;
 
 import net.minecraft.core.BlockPos;
